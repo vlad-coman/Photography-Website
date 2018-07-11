@@ -1,0 +1,45 @@
+<% include partials/header %>
+
+<link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
+<% include partials/body %>
+<% include partials/navbar %>
+<% if (currentUser) {%>
+  <div class="container">
+      <div class="row">
+          <div style="width: 30%; margin: 3em auto;">
+                 <h1 style="text-align: center; color:#FFFFFF">Welcome, <%= currentUser.firstName %></h1>
+                  <div class="form-group">
+                      <a href="/photos/new" class="btn btn-lg btn-success btn-block">Add Photos</a>
+                  </div>
+                  <div class="form-group">
+                      <a href="/photos" class="btn btn-lg btn-danger btn-block">Delete Photos</a>
+                  </div>
+                  <div class="form-group">
+                      <a href="/logout" class="btn btn-lg btn-primary btn-block">Log Out</a>
+                  </div>
+          </div>
+      </div>
+  </div>
+<% } %> 
+<footer>
+   <div class="footer " id="footer">
+      <div class="container-fluid">
+         <div class="row ">
+            <div class="  col-xs-12 " >
+               <ul  class="  social">
+                  <li> <a href="#"> <i class=" fa fa-facebook ">   </i> </a> </li>
+                  <li> <a href="#"> <i class="fa fa-twitter">   </i> </a> </li>
+                  <li> <a href="#"> <i class="fa fa-youtube">   </i> </a> </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </div>
+</footer>
+<script
+   src="https://code.jquery.com/jquery-3.2.1.js"
+   integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+   crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<% include partials/footer %>
