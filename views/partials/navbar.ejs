@@ -33,7 +33,9 @@
              <li><a class="navvv navbar-text" href="/about">About</a></li>
              <% if(!currentUser){%>
               <li><a class="navvv navbar-text" href="/admin">Admin</a></li>
-             <% } %>
+             <% } else { %>
+              <li><a class="navvv navbar-text" href="/logout">Logout</a></li>
+              <% } %>
           </ul>
       </div> <!-- collapse div -->
   
