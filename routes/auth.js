@@ -1,32 +1,19 @@
-const express = require('express'),
-        router = express.Router(),
-        User = require("../models/user"),
-        Photo = require("../models/photo"),
-        passport = require("passport");
+const express    = require('express'),
+      router     = express.Router(),
+      User       = require("../models/user"),
+      Photo      = require("../models/photo"),
+      passport   = require("passport"),
+      middleware = require("../middlewares");
 
-let isLoggedIn = (req, res, next) => {
-    if (req.isAuthenticated()) {
-        return next();
-    }
-    req.flash("error", "You must be logged in to do that");
-    res.redirect("/admin");
-}
-
-
-
-//--------------------------------------------------------------------------
-////////////////////////////////AUTH ROUTES/////////////////////////////////
-//--------------------------------------------------------------------------
-
-//----------------Register Route---------------------------------------------//
-////----------------Commented because we only want one admin------------//
+// Register Route
+//----commented because we only want one admin and nobody else to be able to register
 // router.get("/register", function(req, res) {
 //     res.render("register");
 // });
 
 
-//----------------Register Logic--------------------------------------//
-//----------------Commented because we only want one admin------------//
+// Handling Register Logic
+//----commented because we only want one admin and nobody else to be able to register
 // router.post("/register", function(req, res) {
 //    let newUser = new User({
 //     username:req.body.username,
@@ -45,29 +32,28 @@ let isLoggedIn = (req, res, next) => {
 //             }      
 //     });
 // });
-//-----------------------------------------------------------------------//
 
-//Login route
+// Login Route
 router.get("/admin", (req, res) => {
     res.render("admin");
 });
 
-//Handling login logic
+// Handling Login logic
 router.post("/admin", passport.authenticate("local", {
     successRedirect: "/",
     failureRedirect: "/admin",
     failureFlash: true
 }), (req, res) => {});
 
-//logout route
-router.get("/logout", isLoggedIn, (req, res) => {
+// Logout Route
+router.get("/logout", middleware.isLoggedIn, (req, res) => {
     req.logout();
     req.flash("success", "Successfully logged out");
     res.redirect("/");
 });
 
-//destroy route
-router.delete("/photos/:id", isLoggedIn,  (req, res) => {
+// Destroy Route
+router.delete("/photos/:id", middleware.isLoggedIn, (req, res) => {
     Photo.findByIdAndRemove(req.params.id, (err) => {
         if (err) {
             req.flash("error", "Something went wrong!")
@@ -79,6 +65,5 @@ router.delete("/photos/:id", isLoggedIn,  (req, res) => {
 
     });
 });
-
 
 module.exports = router;

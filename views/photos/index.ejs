@@ -1,8 +1,8 @@
 <% include ../partials/header %>
-
 <link rel="stylesheet" type="text/css" href="/stylesheets/index.css">
 <% include ../partials/body %>
 <% include ../partials/navbar %>
+
 <div class="container fluid">
    <div class="row">
       <% photos.forEach((photo)=>{ %>
@@ -11,15 +11,14 @@
                <% if (currentUser) {%>
                   <form action="/photos/<%= photo._id %>?_method=DELETE" method="POST">
                      <button type="submit" class="btn btn-danger">Delete</button>
-                  </form>   
+                  </form>
                <% } %>   
-               <img class="img-thumbnail img img-responsive full-width" src="<%= photo.image %>">
+                  <img class="img-thumbnail img img-responsive full-width" src="<%= photo.image %>">
             </div>
          </div>
       <% }); %>
    </div>
 </div>
-
 <script
    src="https://code.jquery.com/jquery-3.1.1.js"
    integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
@@ -28,6 +27,3 @@
    src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 <% include ../partials/footer %>
-
-
-

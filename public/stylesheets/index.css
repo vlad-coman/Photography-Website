@@ -1,30 +1,40 @@
-html, body {
+html,
+body {
      background-color: #4c4c4c;
 }
-.jumbotron{
+
+.jumbotron {
      background-color: #FFF;
 }
- .navvv {
+
+.navvv {
      font-family: 'Syncopate', sans-serif;
 }
- #hamb {
+
+#hamb {
      margin-top: 20px;
 }
- img {
+
+img {
      float: left;
      margin: 0 20px 20px 0;
 }
- p {
+
+p {
      text-align: justify;
      text-indent: 2em;
 }
- a{
-     color:#26a5d3;
+
+a {
+     color: #26a5d3;
 }
- a:hover,a:focus{
-     text-decoration:none;
-     color:#26a5d3;
+
+a:hover,
+a:focus {
+     text-decoration: none;
+     color: #26a5d3;
 }
- #home{
+
+#roxana_photography_brand{
      color: #777;
 }

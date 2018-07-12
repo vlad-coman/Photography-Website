@@ -1,17 +1,20 @@
-const express = require('express'),
-        router = express.Router(),
-        User = require("../models/user"),
-        passport = require("passport");
+const express  = require('express'),
+      router   = express.Router(),
+      User     = require("../models/user"),
+      passport = require("passport");
 
-router.get("/", function(req, res) {
+// Home Route
+router.get("/", function (req, res) {
     res.render("home");
 });
 
-router.get("/contact", function(req, res) {
+// Contact Route
+router.get("/contact", function (req, res) {
     res.render("contact");
 });
 
-router.post("/contact", function(req, res) {
+// Handling Contact logic
+router.post("/contact", function (req, res) {
     let mailOpts, smtpTrans;
     smtpTrans = nodemailer.createTransport({
         host: 'smtp.gmail.com',
@@ -28,7 +31,7 @@ router.post("/contact", function(req, res) {
         subject: 'New message recieved from Roxana Photography Website',
         text: `${req.body.name} (${req.body.email}) says: ${req.body.message}`
     };
-    smtpTrans.sendMail(mailOpts, function(error, response) {
+    smtpTrans.sendMail(mailOpts, function (error, response) {
         if (error) {
             req.flash('error', "Something went wrong!");
             res.redirect("/contact");
@@ -40,9 +43,9 @@ router.post("/contact", function(req, res) {
 
 });
 
-
-router.get("/about", function(req, res) {
+// About Route
+router.get("/about", function (req, res) {
     res.render("about");
-}); 
+});
 
 module.exports = router;
