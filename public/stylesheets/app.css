@@ -109,7 +109,7 @@ a:focus {
 }
 
 /*--INDEX PAGE--*/
-img.img-thumbnail.img.img-responsive.full-width {
+.img-thumbnail{
      height:252px;
 }
 
