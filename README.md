@@ -6,7 +6,7 @@ https://serene-woodland-57458.herokuapp.com/
 
 # Tehnologies used
 <li>FRONTEND: HTML5, CSS3, JavaScript, Bootstrap, Embedded JavaScript (EJS)</li>
-<li>BACKEND: NodeJS, NPM, ExpressJS, Nodemailer, RESTFUL Routes, PassportJS.</li>
+<li>BACKEND: NodeJS, NPM, ExpressJS, Nodemailer, RESTFUL Routes, PassportJS, EJS.</li>
 <li>DATABASE: MongoDB</li>
 <li>Remote Hosting on Heroku and MongoLab</li>
 
