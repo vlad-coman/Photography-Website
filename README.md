@@ -22,8 +22,8 @@ https://serene-woodland-57458.herokuapp.com/
   <li><a href="https://nodejs.org/en/download/">Node.js</a></li>
   <li><a href="https://www.mongodb.com/">MongoDB</a> - NoSQL database</li>
 </ul>
-<b>Move into RoxanaPhoto folder from the cloned repository</b>
-<pre>cd RoxanaPhoto</pre>
+<b>Move into cloned or downloaded repository</b>
+<pre>cd Photography-Website-master</pre>
 <b>Install all dependencies from package.json file like in the example below</b></br>
 <pre>npm init</pre>
 <pre>npm install express ejs dotenv...--save</pre>
