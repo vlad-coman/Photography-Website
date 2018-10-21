@@ -1,6 +1,7 @@
 const express  = require('express'),
       router   = express.Router(),
       User     = require("../models/user"),
+      nodemailer = require("nodemailer"),
       passport = require("passport");
 
 // Home Route
